@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "filename": "door_board_keypad.kicad_pro",
+    "version": 1
+  },
+  "schematic": {
+    "drawing": {
+      "default_text_size": 50.0
+    }
+  }
+}

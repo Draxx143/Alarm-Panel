@@ -1,0 +1,153 @@
+BOM (qty / value / symbol / refs)  - generated from the schematic
+================================================================================
+1    CR2032                                               BAT              BT1
+1    Active buzzer 5V                                     BUZZER           BZ1
+1    1000uF 35V                                           CP               C1
+32   100nF                                                C                C3 C4 C7 C10 C13 C17 C20 C23 C26 C27 C28 C29 C30 C31 C33 C37 C41 C42 C50 C52 C53 C55 C63 C64 C65 C66 C67 C68 C72 C74 C75 C76
+1    100nF 50V                                            C                C2
+1    100pF                                                C                C51
+1    100uF 10V tantalum low-ESR (0.7R)                    CP               C35
+1    100uF 16V                                            CP               C71
+1    100uF 35V                                            CP               C62
+1    10pF C0G                                             C                C39
+3    10uF                                                 C                C54 C69 C70
+1    10uF 10V                                             C                C36
+3    10uF 10V tantalum                                    CP               C25 C32 C49
+2    10uF 16V                                             C                C11 C14
+3    1uF                                                  C                C24 C48 C56
+2    2.2uF                                                C                C21 C22
+2    20pF C0G                                             C                C18 C19
+5    220nF                                                C                C57 C58 C59 C60 C61
+1    220uF 10V                                            CP               C73
+1    220uF 16V low-ESR                                    CP               C6
+3    22pF                                                 C                C43 C44 C45
+2    22uF 10V tantalum                                    CP               C12 C15
+1    33pF C0G                                             C                C38
+1    4.7uF (VRTC backup)                                  C                C40
+1    470uF 10V                                            CP               C16
+2    470uF 10V low-ESR                                    CP               C9 C34
+2    470uF 35V low-ESR                                    CP               C5 C8
+2    DNP (match)                                          C                C46 C47
+2    1N4148W flyback                                      D                D30 D31
+3    BAT54W inhibit                                       D                D33 D34 D35
+8    BAV99 / BAT54S clamp                                 DUAL_DIODE       D5 D6 D14 D18 D19 D20 D21 D22
+1    ESD 5V0 (PESD5V0S1BL)                                D                D23
+1    LED blue (WiFi)                                      LED              D17
+1    LED blue (remote learning)                           LED              D41
+1    LED green                                            LED              D40
+1    LED green (3.3V ok)                                  LED              D13
+1    LED green (5V ok)                                    LED              D12
+1    LED green (GSM network)                              LED              D16
+1    LED orange                                           LED              D39
+1    LED red                                              LED              D38
+1    LED red (adapter present)                            LED              D7
+1    LED red (battery low)                                LED              D43
+2    LED yellow                                           LED              D37 D42
+4    SS14 flyback                                         D                D26 D27 D28 D29
+1    SS34                                                 D                D4
+1    SS54 battery OR-ing                                  D                D3
+2    SS54 catch                                           D                D8 D10
+1    SS56 5A adapter OR-ing                               D                D2
+3    TVS SMBJ15A                                          D                D24 D25 D32
+1    TVS SMBJ15A (clamp 24V)                              D                D1
+4    TVS SMBJ5.0A                                         D                D9 D11 D36 D44
+1    Zener 5.1V 500mW (MMSZ5231B)                         D                D15
+4    PPTC 0.5A hold                                       PTC              F5 F6 F7 F8
+1    PPTC 0.5A hold (door board)                          PTC              F14
+1    PPTC 1.5A hold (sirens total)                        PTC              F9
+4    PPTC 1A hold                                         PTC              F3 F10 F11 F12
+1    PPTC 1A hold (cameras)                               PTC              F13
+1    PPTC 2A hold (PGM supply)                            PTC              F4
+1    PPTC 3A hold                                         PTC              F2
+1    PPTC 5A hold                                         PTC              F1
+1    Ferrite 600R                                         FB               FB2
+1    Ferrite 600R/100MHz                                  FB               FB1
+1    ANT 433 (17.3cm wire)                                CONN_2_HDR       J10
+1    BATTERY 12V 7Ah                                      CONN_2           J2
+1    CAMERA 1 POWER 5V                                    CONN_2           J27
+1    CAMERA 2 POWER 5V                                    CONN_2           J28
+1    DC IN 13.8V 5A adapter                               CONN_2           J1
+1    DEBUG UART6 (TX RX GND)                              CONN_3_HDR       J4
+1    DOOR BOARD 2x5 BOX HEADER - LCD PCB + KEYPAD PCB, both I2C CONN_2x05_IDC    J30
+1    GSM USB FW (VBUS DP DN GND) - connect 5V only for upgrade CONN_4           J9
+1    PGM1 (open-drain sink; load between PGM and +12V)    CONN_2           J18
+1    PGM2 (open-drain sink; load between PGM and +12V)    CONN_2           J19
+1    PGM3 (open-drain sink; load between PGM and +12V)    CONN_2           J20
+1    PGM4 (open-drain sink; load between PGM and +12V)    CONN_2           J21
+1    RELAY 1 (COM NO NC) low-voltage loads only           CONN_3           J22
+1    RELAY 2 (COM NO NC) low-voltage loads only           CONN_3           J23
+1    SENSOR POWER 12V (1)                                 CONN_2           J16
+1    SENSOR POWER 12V (2)                                 CONN_2           J17
+1    SIM CARD HOLDER 8-pin (Molex 91228 style) - alternative to the nano socket  [DNP - NOT FITTED] SIM_HOLDER_8     J7
+1    SIM NANO-SIM SOCKET (JAE SF72, push-push) - fitted   SIM_NANO         J6
+1    SIREN 1 (-, +12V)                                    CONN_2           J24
+1    SIREN 2 (-, +12V)                                    CONN_2           J25
+1    SIREN 3 (-, +12V)                                    CONN_2           J26
+1    SMA GSM ANTENNA (50R trace)                          CONN_SMA         J8
+1    SPEAKER 8R 2W                                        CONN_2           J29
+1    SWD (3V3 SWDIO SWCLK NRST GND)                       CONN_5           J3
+1    TAMPER LOOP (case switch NC + EOL 2.2k)              CONN_2           J15
+1    USB-SERIAL 3.3V (GND, adapter TX, adapter RX)        CONN_3_HDR       J5
+1    ZONE 1 (NC sensors in series, EOL 2.2k at last sensor) CONN_2           J11
+1    ZONE 2 (NC sensors in series, EOL 2.2k at last sensor) CONN_2           J12
+1    ZONE 3 (NC sensors in series, EOL 2.2k at last sensor) CONN_2           J13
+1    ZONE 4 (NC sensors in series, EOL 2.2k at last sensor) CONN_2           J14
+1    JP_BOOT0 (install = STM32 UART bootloader)           JUMPER_2         JP1
+1    JP_FACTORY (install at power-up = factory reset)     JUMPER_2         JP6
+1    JP_LINK: 1-2 and 3-4 (STM32 <-> ESP32 link)          JUMPER_2x2       JP4
+1    JP_PROG_ESP: 1-2 and 3-4 (program ESP32 UART0)       JUMPER_2x2       JP2
+1    JP_PROG_STM: 1-2 and 3-4 (program STM32 USART3, BOOT0 on) JUMPER_2x2       JP3
+1    JP_SERVICE (install = SERVICE/repair mode)           JUMPER_2         JP5
+1    JP_SIREN_INHIBIT (install = sirens hardware-disabled) JUMPER_2         JP7
+2    SRD-05VDC-SL-C                                       RELAY            K1 K2
+2    33uH 4A shielded                                     L                L1 L2
+7    AO3400A                                              NMOS_SOT23       Q8 Q9 Q10 Q11 Q14 Q15 Q16
+1    AO3401A VBAT switch                                  PMOS_SOT23       Q2
+6    BC817-40                                             NPN_SOT23        Q3 Q4 Q5 Q12 Q13 Q17
+1    BSS138 (GSM TXD -> MCU RX)                           NMOS_SOT23       Q7
+1    BSS138 (MCU TX -> GSM RXD)                           NMOS_SOT23       Q6
+1    IRFR5305 reverse-polarity                            PMOS_DPAK        Q1
+1    0R (SIM_VDD link)                                    R                R38
+1    0R (matching)                                        R                R41
+1    100k                                                 R                R22
+2    100k 1%                                              R                R3 R6
+1    10R                                                  R                R98
+1    10R 2W charge-limit                                  R                R2
+28   10k                                                  R                R1 R14 R15 R16 R20 R21 R23 R31 R32 R33 R34 R47 R48 R49 R50 R63 R65 R67 R69 R75 R77 R79 R82 R83 R84 R86 R88 R90
+22   1k                                                   R                R5 R8 R13 R17 R24 R30 R44 R51 R70 R72 R80 R85 R87 R89 R91 R92 R93 R94 R95 R96 R97 R107
+1    1k 1%                                                R                R11
+6    2.2k                                                 R                R12 R53 R55 R57 R59 R61
+1    2.2k 1% (Vout=3.94V)                                 R                R10
+2    200k 1%                                              R                R101 R102
+2    22R                                                  R                R42 R43
+2    22k 1%                                               R                R4 R7
+9    330R                                                 R                R18 R19 R62 R64 R66 R68 R74 R76 R78
+13   4.7k                                                 R                R9 R26 R28 R39 R40 R45 R46 R99 R100 R103 R104 R105 R106
+5    4.7k 1%                                              R                R52 R54 R56 R58 R60
+6    47k                                                  R                R25 R27 R29 R71 R73 R81
+3    51R                                                  R                R35 R36 R37
+1    10k volume                                           POT              RV1
+1    BTN DELETE all remotes (hold)                        SW               SW5
+1    BTN LEARN remote                                     SW               SW4
+1    BTN TEST / silence                                   SW               SW6
+1    ESP BOOT (IO0)                                       SW               SW3
+1    ESP EN                                               SW               SW2
+1    RESET                                                SW               SW1
+1    24C256 (0x50 on I2C1)                                24C256           U10
+1    AMS1117-3.3 (ESP32 only)                             AMS1117-3.3      U4
+1    AMS1117-3.3 (MCU)                                    AMS1117-3.3      U3
+1    DS3231SN (0x68 on I2C1)                              DS3231SN         U9
+1    ESP32-WROOM-32                                       ESP32-WROOM-32   U11
+1    LM2596S-5.0                                          LM2596S          U1
+1    LM2596S-ADJ (4.0V GSM)                               LM2596S          U2
+1    LM386N-1                                             LM386            U13
+1    PCA9306 #1 (I2C1: LCD backpack, 3.3V <-> 5V)         PCA9306          U14
+1    PCA9306 #2 (I2C3: keypad backpack, 3.3V <-> 5V)      PCA9306          U15
+1    RXB61                                                RXB61_MOD        U8
+1    SIM800C                                              SIM800C          U6
+1    SRV05-4 ESD (SIM lines)                              SRV05-4          U7
+1    SRV05-4 ESD (zones 1-4)                              SRV05-4          U12
+1    STM32F407VGT6                                        STM32F407VGT6    U5
+1    8MHz CL=12pF                                         XTAL             Y1
+
+Total parts: 326

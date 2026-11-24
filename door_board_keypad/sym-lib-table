@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "door_board_keypad")(type "KiCad")(uri "${KIPRJMOD}/door_board_keypad.kicad_sym")(options "")(descr "Alarm panel symbols"))
+)

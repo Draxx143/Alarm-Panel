@@ -1,0 +1,62 @@
+DOOR BOARD PINOUT / WIRING (2x5 BOX HEADER) - rev 3
+=====================================================================
+لوحه‌ی در (LCD + کیپد) دو PCB جدا دارد و هر کدام آی‌سی I2C خودش را دارد.
+روی برد اصلی فقط یک کانکتور 2x5 (باکس هدر 10 پایه) هست که 6 پایش استفاده می‌شود
+و 4 پایه یدکی است.
+
+MAIN BOARD  J30 (Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical)
+---------------------------------------------------------------------
+ pin  signal        goes to                                        note
+ ---  ------------  ---------------------------------------------  ---------------------------------
+  1   DOOR_5V       +5V rail through PPTC 0.5A (F14) + SMBJ5.0A    LCD backlight + both backpacks
+  2   GND           ground
+  3   LCD_SCL       PCA9306 #1 (U14) high side  <-> I2C1 SCL (PB6)  LCD backpack, 0x27
+  4   LCD_SDA       PCA9306 #1 (U14) high side  <-> I2C1 SDA (PB7)  100 kHz, 4.7k pull-ups on board
+  5   KP_SCL        PCA9306 #2 (U15) high side  <-> I2C3 SCL (PA8)  keypad backpack, 0x20
+  6   KP_SDA        PCA9306 #2 (U15) high side  <-> I2C3 SDA (PC9)  100 kHz, 4.7k pull-ups on board
+  7   KEYPAD_INT    PCF8574 /INT -> PB8 (10k pull-up + 100nF)        optional, active low
+  8   +3V3          spare (3.3V from the main board)
+  9   GND           spare (tied to GND so a 10-way flat cable has no floating wires)
+ 10   GND           spare (tied to GND)
+
+The two I2C buses are separate hardware buses:
+  I2C1 = PB6/PB7 : LCD backpack (0x27) + DS3231 RTC (0x68) + 24C256 EEPROM (0x50)  [main board]
+  I2C3 = PA8/PC9 : keypad backpack (0x20) only
+JP_FACTORY had to move from PC9 to PD7 because PC9 is the only free pin that can be I2C3_SDA.
+
+DOOR BOARD  J1 - LCD PCB (its own PCB, its own PCF8574 backpack at 0x27)
+---------------------------------------------------------------------
+ pin  signal
+  1   DOOR_5V   (+5V + backlight through the LCD_A/BC817 circuit)
+  2   GND
+  3   LCD_SCL
+  4   LCD_SDA
+ 5,6,7,8,9,10 unused on this PCB
+ Board contents: LCD1602 (RW = GND, write only), PCF8574 (A0..A2 = GND -> 0x27),
+ contrast pot 10k, backlight driver BC817 + 100R, 4.7k pull-ups, 10uF + 100nF.
+
+DOOR BOARD  J1 - KEYPAD PCB (its own PCB, its own PCF8574 backpack at 0x20)
+---------------------------------------------------------------------
+ pin  signal
+  1   DOOR_5V
+  2   GND
+  5   KP_SCL
+  6   KP_SDA
+  7   KEYPAD_INT   (/INT of the PCF8574, open drain)
+ 3,4,8,9,10 unused on this PCB
+ Board contents: PCF8574 (A0 = +5V, A1 = A2 = GND -> 0x20), 4x4 keypad on P0..P7,
+ 4.7k pull-ups on SDA/SCL, 10k pull-up on /INT, 100nF decoupling.
+
+CABLING NOTES
+---------------------------------------------------------------------
+ - Use one 10-way flat cable with IDC connectors (or two 6-way cables). Keep it short (< 1 m)
+   and run SCL/SDA with a ground return next to them; the 4.7k pull-ups are on the main board
+   for the 5V side, so do not add more than one extra pull-up on the door board.
+ - If the cable is long or in a very noisy environment, drop the bus to 50 kHz or use a
+   P82B96/PCAL6408A style driver, or move the PCA9306 onto the door board (the 5V side).
+ - The LCD/keypad backpacks must be the 5V PCF8574 types (most common). If a backpack is 3.3V
+   only, do not fit the 100nF/0R on that rail and feed it from pin 8 (+3V3) instead.
+ - Level shifting: the STM32 pins are 3.3V, the door board is 5V. PCA9306 #1/#2 (U14/U15) sit
+   on the main board, one per bus. Their EN pin is tied to VREF2 through 200k (always enabled).
+ - KEYPAD_INT is optional. Without it the firmware polls the keypad backpack every 20-50 ms
+   over I2C, which is fine for a keypad.
